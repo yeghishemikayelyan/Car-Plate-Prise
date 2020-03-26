@@ -1,0 +1,42 @@
+correct_words_string = '''
+{
+"library" :
+    [
+        {
+            "word" : "I",
+            "part_of_speech" : "pronoun",
+        },
+        {
+            "word" : "am",
+            "part_of_speech" : "adverb",
+        },
+        {
+            "word" : "a",
+            "part_of_speech" : "indefinite_article",
+        },
+        {
+            "word" : "student",
+            "part_of_speech" : "noun",
+        },
+        {
+            "word" : "at",
+            "part_of_speech" : "preposition",
+        },
+        {
+            "word" : "American",
+            "part_of_speech" : "pronoun",
+        },
+        {
+            "word" : "university",
+            "part_of_speech" : "noun",
+        },
+        {
+            "word" : "in",
+            "part_of_speech" : "preposition",
+        },
+        {
+            "noun" : "Armenia",
+            "part_of_speech" : "noun",
+        },
+    ]
+}
