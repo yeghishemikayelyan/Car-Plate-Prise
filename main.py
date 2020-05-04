@@ -1,5 +1,6 @@
 import json
 
+
 def find_the_word(word):
     with open('Correct_Words.json') as f:
         data = json.loads(f.read())
@@ -16,8 +17,8 @@ def find_the_word(word):
 def check_word(my_word):
     my_search_result = find_the_word(my_word)[0]
     if (bool(my_search_result == my_word)) is True:
-
         return True
+
 
 def true_false_count(search_word, given_word):
     true_count = 0
@@ -33,10 +34,11 @@ def true_false_count(search_word, given_word):
             false_count = false_count + 1
     return [true_count, false_count]
 
+
 def true_false_comparison(my_list):
     true = my_list[0]
     false = my_list[1]
-    if(true >= false) is True:
+    if (true >= false) is True:
         return True
 
 
@@ -61,9 +63,10 @@ def inequality(correct_word, incorrect_word):
             i = i + 1
     return [true_count, false_count]
 
-def my_suggestion(correct_word, incorrcet_word, my_part_of_speech):
 
-    suggestion = input(f"Do you mean {correct_word}? Because {incorrcet_word} does not exist in our library, please type yes or no - ")
+def my_suggestion(correct_word, word, my_part_of_speech):
+    suggestion = input(
+        f"Do you mean '{correct_word}'? Because '{word}' does not exist in our library, please type yes or no - ")
 
     result = False;
     while True:
@@ -72,7 +75,7 @@ def my_suggestion(correct_word, incorrcet_word, my_part_of_speech):
             result = True
             break
         elif (suggestion == "no") is True:
-            # print(f"{correct_word}  is a {my_part_of_speech}")
+            print(f"Sorry, '{word}'  does not exist in our library.")
             result = False
             break
         else:
@@ -80,14 +83,15 @@ def my_suggestion(correct_word, incorrcet_word, my_part_of_speech):
             suggestion = input(f"Please, insert a valid response, either yes or no - ")
     return result
 
+
 def main():
     is_found = 0
-    my_word = input("Please enter your word ")
-    word = my_word
+    word = input("Please enter your word ")
+
     try:
-        if (check_word(my_word)) is True:
-            my_part_of_speech = find_the_word(my_word)[1]
-            print(f"{word} is a { my_part_of_speech}")
+        if (check_word(word)) is True:
+            my_part_of_speech = find_the_word(word)[1]
+            print(f"{word} is a {my_part_of_speech}")
             return
     except UnboundLocalError:
         pass
@@ -108,7 +112,6 @@ def main():
                     if result is True:
                         break
 
-
             if (len(search) != len(word)) is True:
                 current_list = inequality(search, word)
 
@@ -118,8 +121,9 @@ def main():
                     if result is True:
                         break
 
-
     if (is_found != 1) is True:
         print("We could not find anything similar to your word")
 
+
 main()
+
